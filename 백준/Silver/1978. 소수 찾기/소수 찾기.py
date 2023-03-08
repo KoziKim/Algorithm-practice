@@ -1,19 +1,16 @@
-import math
-
-N = input()
-num = input().split()
-c = []
-
-def is_prime(n):
-    for i in range(2, int(math.sqrt(n))+1):
-        if n % i == 0:
-            return False
-    return True
-
-for i in range(0, len(num)):
-    if num[i] == "1":
-        continue
-    if is_prime(int(num[i])):
-        c.append(num[i])
-
-print(len(c))
+N = int(input())
+datas = list(map(int,input().split()))
+temps = [1,3,5,7]
+count=0
+for data in datas: 
+    result = False
+    if data ==2:
+        count+=1
+    for i in range(2,data):
+        if data%i == 0:
+            result = False
+            break
+        result = True
+    if result:
+        count+=1
+print(count)
