@@ -15,4 +15,4 @@ for i in range(N):
     for k in range(len(C)):
         print(' '.join(C[k]))
         if k == len(C) - 1:
-            print('')
+            print()
