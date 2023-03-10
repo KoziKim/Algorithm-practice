@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 N = int(sys.stdin.readline())
-q = deque(maxlen=2000000)
+q = deque(maxlen=3000000)
 
 for i in range(N):
     A = sys.stdin.readline().split()
