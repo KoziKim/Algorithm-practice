@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 N = int(sys.stdin.readline())
-q = deque()
+q = deque(maxlen=2000000)
 
 for i in range(N):
     A = sys.stdin.readline().split()
@@ -9,15 +9,11 @@ for i in range(N):
         q.append(int(A[1]))
         continue
     if A[0] == "pop":
-        try:
-            if q:
-                print(q.popleft())
-            else:
-                print(-1)
-            continue
-        except:
+        if q:
+            print(q.popleft())
+        else:
             print(-1)
-            continue
+        continue
     if A[0] == "size":
         print(len(q))
         continue
