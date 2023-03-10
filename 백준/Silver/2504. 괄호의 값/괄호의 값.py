@@ -4,8 +4,8 @@ S = []
 ans = 0
 tmp = 1
 
-def listrindex(a, value):
-    return len(a) - a[::-1].index(value) -1
+# def listrindex(a, value):
+#     return len(a) - a[::-1].index(value) -1
 
 for i in range(len(bracket)):
     if bracket[i] == '(':
@@ -18,8 +18,7 @@ for i in range(len(bracket)):
         if '(' in S and S[-1] != '[':
             if bracket[i-1] == '(':
                 ans += tmp
-            a = listrindex(S, '(')
-            S.pop(a)
+            S.pop()
             tmp //= 2
         else:
             ans = 0
@@ -28,8 +27,7 @@ for i in range(len(bracket)):
         if '[' in S and S[-1] != '(':
             if bracket[i-1] == '[':
                 ans += tmp
-            a = listrindex(S, '[')
-            S.pop(a)
+            S.pop()
             tmp //= 3
         else:
             ans = 0
@@ -38,6 +36,3 @@ if S:
     print(0)
 else:
     print(ans)
-
-
-
