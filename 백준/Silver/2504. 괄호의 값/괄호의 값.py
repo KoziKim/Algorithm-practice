@@ -5,7 +5,7 @@ ans = 0
 tmp = 1
 
 def listrindex(a, value):
-    return len(a) - a[-1::-1].index(value) -1
+    return len(a) - a[::-1].index(value) -1
 
 for i in range(len(bracket)):
     if bracket[i] == '(':
@@ -38,3 +38,6 @@ if S:
     print(0)
 else:
     print(ans)
+
+
+
