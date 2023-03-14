@@ -2,7 +2,6 @@ import sys
 
 input = sys.stdin.readline
 
-res = []
 while True:
     h_height = list(map(int, input().split()))
     if h_height[0] == 0:
