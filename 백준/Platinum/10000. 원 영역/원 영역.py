@@ -4,17 +4,17 @@ n = int(input())
 circles = []
 for _ in range(n):
     x, r = map(int, sys.stdin.readline().split())
-    circles.append(("L", x - r))
-    circles.append(("R", x + r))
+    circles.append((1, x - r))
+    circles.append((-1, x + r))
 
-circles.sort(key=lambda x: (x[0]),  reverse=True)
+circles.sort(key=lambda x: x[0])
 circles.sort(key=lambda x: x[1])
 
 stack = []
 count = 1
 
 for circle in circles:
-    if circle[0] == "L":
+    if circle[0] == 1:
         stack.append(circle)
         continue
 
@@ -23,7 +23,7 @@ for circle in circles:
 
     while stack:
         prev = stack.pop()
-        if prev[0] == "L":
+        if prev[0] == 1:
             width = circle[1] - prev[1]
             if total_width == width:
                 if not has_same_width:
