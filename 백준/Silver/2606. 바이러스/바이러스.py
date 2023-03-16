@@ -1,6 +1,4 @@
-#BFS
-
-from collections import deque
+# DFS
 
 n = int(input())
 k = int(input())
@@ -12,13 +10,11 @@ for _ in range(k):
     graph[a].append(b)
     graph[b].append(a)
 
-Q = deque([1])
-
-while Q:
-    current = Q.popleft()
-    for nx in graph[current]:
+def dfs(k):
+    visited[k] = 1
+    for nx in graph[k]:
         if visited[nx] == 0:
-            Q.append(nx)
-            visited[nx] = 1
+            dfs(nx)
 
+dfs(1)
 print(sum(visited)-1)
