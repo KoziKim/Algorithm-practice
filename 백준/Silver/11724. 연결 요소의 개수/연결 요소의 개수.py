@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(5000)
+sys.setrecursionlimit(10000)
 input = sys.stdin.readline
 
 N, M = map(int, input().split())
@@ -21,10 +21,10 @@ cnt = 0
 
 for i in range(1, N+1):
     if not visited[i]:
-        if not graph[i]:
-            cnt += 1
-            visited[i] = 1
-        else:
+        # if not graph[i]:
+        #     cnt += 1
+        #     visited[i] = 1
+        # else:
             dfs(i)
             cnt += 1
 
