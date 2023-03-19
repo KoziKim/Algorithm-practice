@@ -4,9 +4,8 @@ def dfs(arr, n):
     cnt = 0
     for i in arr[n]:
         if not visited[i]:
-            visited[i] = True
-            cnt += 1
-            cnt += dfs(arr, i)
+            visited[i] = 1
+            cnt += 1 + dfs(arr, i)
     return cnt
 
 N, M = map(int, stdin.readline().split())
