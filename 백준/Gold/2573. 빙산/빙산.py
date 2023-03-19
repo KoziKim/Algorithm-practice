@@ -18,7 +18,7 @@ def bfs(i, j, visited):
                 visited[ni][nj] = 1
 
 def solve():
-    for year in range(1, 900000):
+    for year in range(1, 90000):
         melting = [[0] * M for _ in range(N)]
         # 0 개수 세기
         for i in range(1, N-1):
