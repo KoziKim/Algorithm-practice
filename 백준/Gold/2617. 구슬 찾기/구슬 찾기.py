@@ -12,7 +12,7 @@ def dfs(arr, n):
 N, M = map(int, stdin.readline().split())
 heavier = [[] for _ in range(N+1)]  # 무거운 구슬
 lighter = [[] for _ in range(N+1)]  # 가벼운 구슬
-mid = (N+1) // 2  # 개수 기준 중간값
+mid = (N+1) / 2  # 개수 기준 중간값
 
 for i in range(M):
     a, b = map(int, stdin.readline().split())
@@ -21,11 +21,10 @@ for i in range(M):
 
 answer = 0
 for i in range(1, N+1):
-    visited = [False] * (N+1)
+    visited = [0] * (N+1)
     cnt = dfs(heavier, i)
     if cnt >= mid:
         answer += 1
-    visited = [False] * (N+1)
     cnt = dfs(lighter, i)
     if cnt >= mid:
         answer += 1
