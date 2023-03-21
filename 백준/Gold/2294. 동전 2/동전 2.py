@@ -1,34 +1,35 @@
 from collections import deque
 import sys
-# sys.stdin = open("답체크.txt","r")
+
 input=sys.stdin.readline
 
-n, value = map(int, input().split())
-coins=list(set(int(input()) for _ in range(n)))
-check=[0 for _ in range(value+1)] ### 중복된 조합 filter해서 빼주는 효과가 있음// 없으면 메모리 초과난다 ..!
+n, k = map(int, input().split())
+coins = list(set(int(input()) for _ in range(n)))
+used = [0 for _ in range(k+1)]
 
-def bfs(coins, value):
-    queue=deque()
+def bfs(coins, target):
+    q = deque()
     for coin in coins:
-        if coin<value:
-            queue.append([coin,1])
-            check[coin]=1
+        if coin < target:
+            q.append([coin, 1])
+            used[coin] = 1
 
-    while queue:
-        cum, cnt=queue.popleft()
-        if value==cum:
-            print(cnt)
-            break
+    while q:
+        coin_sum, cnt = q.popleft()
+        if target == coin_sum:
+            return cnt
         for coin in coins:
-            cum1=cum+coin
-            cnt1=cnt+1
-            if cum1>value:
+            n_coin_sum = coin_sum + coin
+            n_cnt = cnt + 1
+            if n_coin_sum > target:
                 continue
-            elif cum1<=value and check[cum1]==0:
-                check[cum1]=1
-                queue.append([cum1,cnt1])
+            elif not used[n_coin_sum]:
+                used[n_coin_sum] = 1
+                q.append([n_coin_sum, n_cnt])
             
-    if cum!=value:
-        print('-1')
+    if coin_sum!=target:
+        return -1
 
-bfs(coins,value)
+ans = bfs(coins, k)
+
+print(ans)
