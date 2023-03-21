@@ -26,9 +26,7 @@ def bfs(coins, target):
             elif not used[n_coin_sum]:
                 used[n_coin_sum] = 1
                 q.append([n_coin_sum, n_cnt])
-            
-    if coin_sum!=target:
-        return -1
+    return -1
 
 ans = bfs(coins, k)
 
