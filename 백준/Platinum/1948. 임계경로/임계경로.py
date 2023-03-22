@@ -8,14 +8,14 @@ M = int(input())
 
 indegree = [0] * (N+1)
 graph = [[] for _ in range(N+1)]
-return_graph = [[] for _ in range(N+1)]
+# return_graph = [[] for _ in range(N+1)]
 cnt = [[] for _ in range(N+1)]
 
 for _ in range(M):
     # a: 출발 도시, b: 도착 도시, c: 걸리는 시간
     a, b, c = map(int, input().split())
     graph[a].append((b, c))
-    return_graph[b].append(a)
+    # return_graph[b].append(a)
     indegree[b] += 1
 
 start, end = map(int, input().split())
