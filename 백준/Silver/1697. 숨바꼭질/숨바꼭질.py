@@ -16,6 +16,6 @@ while q:
     for nx in (x+1, x-1, 2*x):
         if nx < 0 or nx > MAX: 
             continue
-        if 0 <= nx <= nx and check[nx] == 0:
+        if check[nx] == 0:
             check[nx] = check[x] + 1
             q.append(nx)
