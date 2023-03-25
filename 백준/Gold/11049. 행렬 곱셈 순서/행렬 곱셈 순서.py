@@ -1,18 +1,28 @@
 import sys
 input = sys.stdin.readline
+INF = sys.maxsize
 
 N = int(input())
+m = [[0]*(N+1) for _ in range(N+1)]
 
-A = []
-for _ in range(N):
-  a, b = map(int, input().split())
-  A.append(a)
-A.append(b)
+p = []
+a,b = map(int,input().split())
+p.append(a)
+p.append(b)
+for i in range(1, N):
+    a,b = map(int,input().split())
+    p.append(b)
 
-min_mult = [ [0]*(N+1) for _ in range(N+1) ]
+for i in range(1,N+1):
+    m[i][i] = 0 # 초깃값 셋팅 (i=j인 경우들)
 
-for i in range(N, -1, -1):
-  for j in range(i+2, N+1):
-    min_mult[i][j] = min([A[i]*A[k]*A[j] + min_mult[i][k] + min_mult[k][j] for k in range(i+1, j)])
+for i in range(1, N+1) :
+    for j in range(i-1, 0,-1) :
+        min_value = INF
+        for k in range(j,i) :
+            temp_value = m[j][k]+m[k+1][i]+p[j-1]*p[k]*p[i]
+            if min_value > temp_value :
+                min_value = temp_value
+        m[j][i]= min_value
 
-print(min_mult[0][N])
+print(m[1][N])
