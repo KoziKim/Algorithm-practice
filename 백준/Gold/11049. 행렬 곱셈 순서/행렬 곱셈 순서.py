@@ -1,23 +1,18 @@
 import sys
-inp = sys.stdin.readline
-N = int(inp().rstrip())
+input = sys.stdin.readline
 
-r = [0] * N
-c = [0] * N
-dp = [[0] * N for _ in range(N)]
+N = int(input())
 
-def solve(x, y):
-    ans = sys.maxsize
-    if dp[x][y] > 0:
-        return dp[x][y]
-    if y - x <= 0:
-        return 0
-    for k in range(x, y):
-        ans = min(ans, r[x]*c[k]*c[y] + solve(x, k) + solve(k+1, y))
-    dp[x][y] = ans
-    return dp[x][y]
+A = []
+for _ in range(N):
+  a, b = map(int, input().split())
+  A.append(a)
+A.append(b)
 
-for i in range(N):
-    r[i], c[i] = map(int, inp().split())
+min_mult = [ [0]*(N+1) for _ in range(N+1) ]
 
-print(solve(0, N-1))
+for i in range(N, -1, -1):
+  for j in range(i+2, N+1):
+    min_mult[i][j] = min([A[i]*A[k]*A[j] + min_mult[i][k] + min_mult[k][j] for k in range(i+1, j)])
+
+print(min_mult[0][N])
