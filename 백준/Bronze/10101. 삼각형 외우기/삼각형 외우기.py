@@ -8,5 +8,5 @@ elif angle[0] == angle[1] == angle[2] == 60:
     print('Equilateral')
 elif angle[0] == angle[1] or angle[1] == angle[2] or angle[0] == angle[2]:
     print('Isosceles')
-elif angle[0] != angle[1] != angle[2]:
+else:
     print('Scalene')
