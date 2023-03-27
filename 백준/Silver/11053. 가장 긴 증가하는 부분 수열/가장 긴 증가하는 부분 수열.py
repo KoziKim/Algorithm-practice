@@ -1,12 +1,16 @@
-x = int(input())
-
+n = int(input())
 arr = list(map(int, input().split()))
 
-dp = [1 for i in range(x)]
+list = []
+list.append(arr[0])
 
-for i in range(x):
-    for j in range(i):
-        if arr[i] > arr[j]:
-            dp[i] = max(dp[i], dp[j]+1)
+for i in range(1, len(arr)):
+    if list[-1] < arr[i]:
+        list.append(arr[i])
+    else:
+        for j in range(i):
+            if list[j] >= arr[i]:
+                list[j] = arr[i]
+                break
 
-print(max(dp))
+print(len(list))
