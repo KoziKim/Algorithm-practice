@@ -1,12 +1,10 @@
 from heapq import heappush, heappop
-from collections import deque
 
 N, M = map(int, input().split())
 
 boxq = []
 present_num = list(map(int, input().split()))
 wish_num = list(map(int, input().split()))
-wish_q = deque(wish_num)
 
 for i in range(N):
     heappush(boxq, -present_num[i])
