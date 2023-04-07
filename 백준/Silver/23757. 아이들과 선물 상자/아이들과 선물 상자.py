@@ -14,12 +14,9 @@ for i in range(N):
 for i in range(M):
     max_box = -heappop(boxq)
     if max_box < wish_num[i]:
+        print(0)
         break
     else:
         heappush(boxq, -(max_box - wish_num[i]))
-        wish_q.popleft()
-
-if wish_q:
-    print(0)
 else:
     print(1)
