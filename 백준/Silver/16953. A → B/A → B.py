@@ -2,8 +2,8 @@ from collections import deque
 
 A, B = map(int, input().split())
 
-q = deque([(A, 1)])
-
+q = deque()
+q.append((A,1))
 if A == B:
     print(1)
     exit()
