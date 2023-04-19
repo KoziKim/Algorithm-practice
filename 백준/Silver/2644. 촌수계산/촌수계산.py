@@ -12,10 +12,6 @@ for i in range(m):
     x, y = map(int, input().split())
     graph[x].append(y)
     graph[y].append(x)
-# for i in graph[a]:
-#     print(i)
-#     print(graph[i])
-# print(graph[a])
 
 q = deque()
 q.append((a, 0))
