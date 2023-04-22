@@ -29,4 +29,6 @@ while q:
             nx = graph[i]
             check[i] = True
             q.append((nx, hm_route + " " + str(i)))
+            # q.append((nx, hm_route + str(i)))
+
 print(-1)
