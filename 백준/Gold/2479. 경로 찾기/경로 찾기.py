@@ -9,20 +9,24 @@ for i in range(n):
 
 s, e = map(int, input().split())
 q = deque()
-q.append((s, str(s))) # 경로에 시작 넣어놓음 
+q.append((graph[s], str(s))) # 경로에 시작 넣어놓음 
 check[s] = True
+# print(graph[s][1])
 
 while q:
-    start, hm_route = q.popleft()
-    if start == e:
+    x, hm_route = q.popleft()
+    if x == graph[e]:
         print(hm_route)
         exit()
     for i in range(1, n+1):
+        if check[i]:
+            continue
         dist = 0
         for j in range(k):
-            if graph[start][j] != graph[i][j]:
+            if x[j] != graph[i][j]:
                 dist += 1
-        if dist == 1 and not check[i]:
+        if dist == 1:
+            nx = graph[i]
             check[i] = True
-            q.append((i, hm_route + " " + str(i)))
+            q.append((nx, hm_route + " " + str(i)))
 print(-1)
