@@ -5,9 +5,8 @@ for i in range(4):
     a, b = map(int, input().split())
     if b > a:
         now = max(now, now-a+b)
-        tmp[i] = now
     else:
         now = now - a + b
-        tmp[i] = now
+    tmp[i] = now
 
 print(max(tmp))
