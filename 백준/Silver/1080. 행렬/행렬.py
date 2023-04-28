@@ -19,9 +19,6 @@ if row >= 3 and col >= 3:
             if graph_1[r][c] != graph_2[r][c]:
                 flip(r, c)
                 cnt+=1
-else:
-    if graph_1 != graph_2:
-        cnt = -1
 
 if graph_1 != graph_2:
     cnt = -1
