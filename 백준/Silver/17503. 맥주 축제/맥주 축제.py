@@ -12,11 +12,9 @@ sum_v = 0
 for i in range(k):
     v, c = map(int, sys.stdin.readline().split())
     beers.append([v, c])
-beers.sort(key=lambda x: (x[1], x[0]))
+beers.sort(key=lambda x: x[1])
 
 candi = []
-
-liver_min = 1e9
 
 for i in range(k):
     v, c = beers[i]
