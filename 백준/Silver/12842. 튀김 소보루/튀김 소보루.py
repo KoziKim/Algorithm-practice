@@ -2,31 +2,22 @@ import sys
 from math import lcm
 
 n, s = map(int, input().split())
-
 m = int(input())
-
-t = []
-
-cnt = 0
-
-for i in range(m):
-    t.append(int(sys.stdin.readline().rstrip()))
+t = [int(sys.stdin.readline().rstrip()) for _ in range(m)]
 
 lcm_t = lcm(*t)
+total_bread_per_cycle = 0
 
-yeah = 0
 for i in range(m):
-    yeah += lcm_t//t[i]
+    total_bread_per_cycle += lcm_t//t[i]
 
-k = n-s
-
-a = k//yeah
-
-n -= a*yeah
+quotient = (n-s)//total_bread_per_cycle
+n -= quotient*total_bread_per_cycle
 
 if n == s:
     print(m)
 
+cnt = 0
 while n > s:
     for i in range(len(t)):
         if cnt%t[i] == 0:
