@@ -22,7 +22,7 @@ while n > s:
     for i in range(len(t)):
         if cnt%t[i] == 0:
             n -= 1
-        if n == s:
-            print(i+1)
-            break
+            if n == s:
+                print(i+1)
+                break
     cnt += 1
