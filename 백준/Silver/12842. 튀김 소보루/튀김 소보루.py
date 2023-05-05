@@ -34,6 +34,4 @@ while n > s:
         if n == s:
             print(i+1)
             break
-    if n == s:
-        break
     cnt += 1
