@@ -12,20 +12,20 @@ cnt = 0
 for i in range(m):
     t.append(int(sys.stdin.readline().rstrip()))
 
-# lcm_t = lcm(*t)
+lcm_t = lcm(*t)
 
-# yeah = 0
-# for i in range(m):
-#     yeah += lcm_t//t[i]
+yeah = 0
+for i in range(m):
+    yeah += lcm_t//t[i]
 
-# k = n-s
+k = n-s
 
-# a = k//yeah
+a = k//yeah
 
-# n -= a*yeah
+n -= a*yeah
 
-# if n == s:
-#     print(m)
+if n == s:
+    print(m)
 
 while n > s:
     for i in range(len(t)):
@@ -37,4 +37,3 @@ while n > s:
     if n == s:
         break
     cnt += 1
-
