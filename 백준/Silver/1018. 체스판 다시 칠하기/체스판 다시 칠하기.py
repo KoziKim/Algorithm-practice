@@ -15,12 +15,12 @@ for i in range(n-7):
                 if (a + b) % 2 == 0:
                     if board[a][b] != 'B':
                         cnt1 += 1
-                    if board[a][b] != 'W':
+                    else:
                         cnt2 += 1
                 else:
                     if board[a][b] != 'W':
                         cnt1 += 1
-                    if board[a][b] != 'B':
+                    else:
                         cnt2 += 1
  
         ans = min(ans, cnt1, cnt2)
