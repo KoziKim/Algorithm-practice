@@ -1,10 +1,10 @@
-# [unrated] 두 수의 합 - 181846 
+# [level unrated] 두 수의 합 - 181846 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181846) 
 
 ### 성능 요약
 
-메모리: 34.2 MB, 시간: 40.34 ms
+메모리: 34.2 MB, 시간: 57.08 ms
 
 ### 구분
 
@@ -13,6 +13,10 @@
 ### 채점결과
 
 정확성: 100.0<br/>합계: 100.0 / 100.0
+
+### 제출 일자
+
+2023년 10월 0일 23:50:12
 
 ### 문제 설명
 
@@ -79,4 +83,4 @@
 </ul>
 
 
-> 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+> 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
