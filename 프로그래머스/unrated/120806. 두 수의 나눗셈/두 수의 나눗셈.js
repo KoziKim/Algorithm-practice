@@ -1,0 +1,1 @@
+const solution = (x, y) => Math.trunc(x / y * 1000);
